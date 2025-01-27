@@ -1,0 +1,30 @@
+@font-face {
+    font-family: NAMU-1990;
+    src: url(/fonts/NAMU-1990.otf);
+}
+body {
+    font-family: NAMU-1990;
+    margin: 20px;
+}
+input {
+    padding: 10px;
+    width: 300px;
+    margin-right: 10px;
+}
+button {
+    padding: 10px;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.done {
+    text-decoration: line-through;
+    color: gray;
+}

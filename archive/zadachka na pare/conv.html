@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Конвертер Валют</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body> 
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    }
+
+    .converter {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    }
+
+    h1 {
+    color: #005eef;
+    margin-bottom: 20px;
+    }
+
+    .input-group {
+    margin-bottom: 15px;
+    text-align: left;
+    margin-right: 20px;
+    }
+
+    label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    }
+
+    input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    }
+
+    button {
+    background-color: #005eef;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    }
+
+    button:hover {
+    background-color: #0040b3;
+    }
+</style>
+  <div class="converter">
+    <h1>Конвертер Валют</h1>
+    <div class="input-group">
+      <label for="currencyFrom">Из валюты:</label>
+      <select id="currencyFrom">
+        <option value="PLN">Злотый (PLN)</option>
+        <option value="UAH">Гривна (UAH)</option>
+        <option value="USD">Доллар (USD)</option>
+        <option value="EUR">Евро (EUR)</option>
+      </select>
+      <input type="number" id="amountFrom" placeholder="Введите сумму">
+    </div>
+    <div class="input-group">
+      <label for="currencyTo">В валюту:</label>
+      <select id="currencyTo">
+        <option value="PLN">Злотый (PLN)</option>
+        <option value="UAH">Гривна (UAH)</option>
+        <option value="USD">Доллар (USD)</option>
+        <option value="EUR">Евро (EUR)</option>
+      </select>
+      <input type="number" id="amountTo" placeholder="Результат" readonly>
+    </div>
+  </div>
+    <script>
+    const exchangeRates = {
+        PLN: { UAH: 8.29, USD: 0.243, EUR: 0.22 },
+        UAH: { PLN: 0.12, USD: 0.029, EUR: 0.027 },
+        USD: { PLN: 4.11, UAH: 34.5, EUR: 0.9 },
+        EUR: { PLN: 4.55, UAH: 38.3, USD: 1.11 },
+    };
+
+    const currencyFrom = document.getElementById('currencyFrom');
+    const currencyTo = document.getElementById('currencyTo');
+    const amountFrom = document.getElementById('amountFrom');
+    const amountTo = document.getElementById('amountTo');
+
+    function convertCurrency() {
+        const from = currencyFrom.value;
+        const to = currencyTo.value;
+        const amount = parseFloat(amountFrom.value);
+
+        if (!isNaN(amount) && exchangeRates[from][to]) {
+        const rate = exchangeRates[from][to];
+        amountTo.value = (amount * rate).toFixed(2);
+        } else {
+        amountTo.value = '';
+        }
+    }
+
+    currencyFrom.addEventListener('change', convertCurrency);
+    currencyTo.addEventListener('change', convertCurrency);
+    amountFrom.addEventListener('input', convertCurrency);
+
+    convertCurrency();
+    </script>
+</body>
+</html>
+
+
+
+
+
+

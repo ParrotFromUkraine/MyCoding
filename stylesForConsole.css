@@ -1,0 +1,8 @@
+@font-face {
+    font-family: NAMU-1990;
+    src: url(/codingProject/fonts/NAMU-1990.otf);
+}
+
+*{
+    font-family: NAMU-1990;
+}
