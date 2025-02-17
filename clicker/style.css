@@ -1,3 +1,12 @@
+    @font-face {
+        font-family: NAMU-1990;
+        src: url(/fonts/NAMU-1990.otf);
+    }
+    *{
+        box-sizing: border-box;
+        font-family: NAMU-1990;
+    }
+
     body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -32,7 +41,8 @@
             padding: 15px;
             border-radius: 10px;
             margin: 20px auto;
-            width: 60%;
+            width: 792px;
+            height: 106px;
             color: white;
             flex-direction: row;
         }
@@ -54,7 +64,7 @@
             height: 40px;
         }
 
-        .container {
+        .buttonClicker {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -63,8 +73,8 @@
         }
 
         .click-button {
-            width: 200px;
-            height: 200px;
+            width: 400px;
+            height: 400px;
             background: #ccc;
             border-radius: 50%;
             border: none;
@@ -77,9 +87,16 @@
         }
         
         footer {
-            text-align: center;
+            display: flex;
+            justify-content: center;
             background: #555;
             color: white;
-            padding: 15px;
             margin-top: auto;
+            gap: 96px;
+            height: 72px;
+            width: auto;
+        }
+        
+        h3{
+            margin: 24px;
         }
