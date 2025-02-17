@@ -1,47 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clicker Game</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
-            margin: 50px;
-        }
-        #clicker {
-            font-size: 24px;
-            padding: 15px 30px;
-            margin: 20px;
-            background-color: #005eef;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        #clicker:hover {
-            background-color: #0047c2;
-        }
-        #counter {
-            font-size: 30px;
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Clicker Game</h1>
-    <p>Clicks: <span id="counter">0</span></p>
-    <button id="clicker">Click me!</button>
-
-    <script>
-        let count = 0;
-        document.getElementById("clicker").addEventListener("click", function() {
-            count++;
-            document.getElementById("counter").textContent = count;
-        });
-    </script>
+    <header>
+        <div class="logo">LOGO</div>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">Market</a>
+            <a href="#">Rating</a>
+        </div>
+        <div class="profile">Tony Stark | $19,247</div>
+    </header>
+    <div class="stats-container">
+        <div class="stats-box">
+            <img class="none" src="/img/01 Images/Placeholder Square.svg" alt="icon">
+            <div>
+                <p><strong>19,247</strong></p>
+                <p>Total ClickCoins</p>
+            </div>
+        </div>
+        <div class="stats-box">
+            <img src="icon.png" alt="icon">
+            <div>
+                <p><strong>20</strong></p>
+                <p>Coins per Click</p>
+            </div>
+        </div>
+        <div class="stats-box">
+            <img src="icon.png" alt="icon">
+            <div>
+                <p><strong>1/sec</strong></p>
+                <p>Passive Income</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <button class="click-button">Click</button>
+    </div>
+    <footer>
+        <p>About game | Help center | Rules</p>
+    </footer>
+    <script src="/clicker/main.js"></script>
 </body>
 </html>
