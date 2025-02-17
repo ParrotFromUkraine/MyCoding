@@ -14,21 +14,21 @@
             <a href="#">Market</a>
             <a href="#">Rating</a>
         </div>
-        <div class="profile">Tony Stark | $19,247</div>
+        <div class="profile" id="userMiniProfile">Tony Stark | $19,247</div>
     </header>
     <div class="stats-container">
         <div class="stats-box">
             <img src="/img/01 Images/Placeholder Square.svg" alt="">
             <div>
                 <p><strong class="counterClick"></strong></p>
-                <p>Total ClickCoins</p>
+                <p id="totalCoinsClick">Total ClickCoins</p>
             </div>
         </div>
         <div class="stats-box">
             <img src="/img/01 Images/Placeholder Square.svg" alt="">
             <div>
                 <p><strong></strong></p>
-                <p>Coins per Click</p>
+                <p id="coinsPerClick">Coins per Click</p>
             </div>
         </div>
         <div class="stats-box">
@@ -40,7 +40,7 @@
         </div>
     </div>
     <div class="buttonClicker">
-        <button class="click-button" onclick="clickerButton()">Click</button>
+        <button class="click-button" id="counter" onclick="clickerButton()">Ви наклікали</button>
     </div>
     <footer>
         <h3>About game</h3>
